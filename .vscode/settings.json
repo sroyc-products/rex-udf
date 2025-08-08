@@ -1,0 +1,70 @@
+{
+    "workbench.startupEditor": "none",
+    "aws.suppressPrompts": {
+        "regionAddAutomatically": true
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "workbench.iconTheme": "vscode-great-icons",
+    "redhat.telemetry.enabled": true,
+    "java.configuration.maven.userSettings": "D:\\apache-maven-3.9.8\\conf\\settings.xml",
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-21.0.7",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "C:/Program Files/Java/jdk-21.0.7",
+            "sources": "C:/Program Files/Java/jdk-21.0.7/lib/src.zip",
+            "javadoc": "C:/Program Files/Java/jdk-21.0.7/api",
+            "default": true
+        }
+    ],
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "maven.settingsFile": "D:\\apache-maven-3.9.8\\conf\\settings.xml",
+    "maven.executable.path": "d:\\apache-maven-3.9.8\\bin\\mvn.cmd",
+    "maven.terminal.useJavaHome": false,
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "C:\\Program Files\\Java\\jdk-21.0.7"
+        },
+        {
+            "environmentVariable": "M2_HOME",
+            "value": "D:\\apache-maven-3.9.8\\"
+        },
+        {
+            "environmentVariable": "M2",
+            "value": "D:\\apache-maven-3.9.8\\bin"
+        }
+    ],
+    "java.compile.nullAnalysis.nonnull": [
+        "javax.annotation.Nonnull",
+        "org.eclipse.jdt.annotation.NonNull",
+        "org.springframework.lang.NonNull"
+    ],
+    "workbench.settings.applyToAllProfiles": [],
+    "java.debug.settings.exceptionBreakpoint.skipClasses": [],
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    /*_ Groovy Home terminal settings*/
+    "terminal.integrated.env.windows": {
+        "GROOVY_HOME": "D:\\groovy\\groovy-4.0.27",
+        "JAVA_HOME": "C:\\Program Files\\Java\\jdk-21.0.7",
+        "Path": "C:\\Program Files\\Java\\jdk-21.0.7\\bin;${env:Path};D:\\groovy\\groovy-4.0.27\\bin"
+    },
+    "terminal.integrated.env.linux": {
+        "GROOVY_HOME": "/usr/local/groovy/apache-groovy-4.0.12",
+        "PATH": "/usr/local/groovy/apache-groovy-4.0.12/bin:${env:PATH}"
+    },
+    "terminal.integrated.env.osx": {
+        "GROOVY_HOME": "/usr/local/groovy/apache-groovy-4.0.12",
+        "PATH": "/usr/local/groovy/apache-groovy-4.0.12/bin:${env:PATH}"
+    },
+    /* Groovy Environment Path ends here*/
+
+    "groovy.java.home": "C:\\Program Files\\Java\\jdk-21.0.7",
+    "groovy.classpath": ["lib/rex-sharable-1.0.jar"]
+
+}
