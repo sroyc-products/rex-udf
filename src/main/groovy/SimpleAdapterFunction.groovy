@@ -2,7 +2,7 @@
 import com.sroyc.rex.sharable.*
 
 import java.util.Map.Entry
-import groovy.json.JsonSlurper
+import groovy.json.*
 
 class SimpleAdapterFunction extends UserDefinedFunction.SingleIOFunction {
     
@@ -16,16 +16,26 @@ class SimpleAdapterFunction extends UserDefinedFunction.SingleIOFunction {
         Map<String, String> queryMap =  param.queryMap
         Map<String, String> pathParams =  param.pathParams
         
-        def obj = jsp.parse(body) // This is essentially a map
+        def obj = jsp.parseText(body) // This is essentially a map
         def out = new OutputBody()
         /// here goes transformation logic
+        out.id = obj.id
+        out.primes = [];
+        for(int i=obj.data.initVal; i<obj.data.finalVal;i++) {
+              def val = 2, factors = 0;
+               while(val < i && factors==0) {
+                if(i%val==0) {
+                    factors++;
+                }
+                val++
+               }
+            if(factors==0) {
+                out.primes.add(i);
+            }
+        }
+        obj.hasNext = true;
 
-        
-
-        
-        print 'This is just a sample'
-
-        RestExecParameters.RestExecParametersBuilder rep = RestExecParameters.builder().body(body)
+        RestExecParameters.RestExecParametersBuilder rep = RestExecParameters.builder().body(JsonOutput.toJson(out))
 
         for (Entry<String, String> entry : headers.entrySet()) {
             rep.header(entry.getKey(), entry.getValue())

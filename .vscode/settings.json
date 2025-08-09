@@ -63,8 +63,14 @@
         "PATH": "/usr/local/groovy/apache-groovy-4.0.12/bin:${env:PATH}"
     },
     /* Groovy Environment Path ends here*/
-
     "groovy.java.home": "C:\\Program Files\\Java\\jdk-21.0.7",
-    "groovy.classpath": ["lib/rex-sharable-1.0.jar"]
-
+    "groovy.classpath": [
+        "lib/rex-sharable-1.0.jar"
+    ],
+    "files.exclude": {
+        "**/.git": true, // Default exclusion
+        "**/.DS_Store": true, // Default exclusion
+        "**/target": true, // Excludes the 'target' directory
+        "**/bin": true // Excludes the 'bin' directory
+    }
 }
