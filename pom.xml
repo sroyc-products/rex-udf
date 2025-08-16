@@ -42,6 +42,15 @@
             <systemPath>${project.basedir}/lib/rex-sharable-1.0.jar</systemPath>
         </dependency>
 
+         <dependency>
+            <groupId>com.sroyc</groupId>
+            <artifactId>rex-sharable</artifactId>
+            <version>1.0</version>
+            <classifier>source</classifier>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/rex-sharable-1.0-sources.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
