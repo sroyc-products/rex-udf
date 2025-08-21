@@ -9,11 +9,11 @@ class SimpleAdapterFunction extends UserDefinedFunction.SingleIOFunction {
 
     def jsp = new JsonSlurper()
 
-    RestExecParameters apply(SimpleFunctionInput param) {
+    ExecParameters apply(ExecParameters param) {
         String body = param.body
         // int statusCode = param.statusCode
-        Map<String, String> headers =  param.headers
-        Map<String, String> queryMap =  param.queryMap
+        Map<String, List<String>> headers =  param.headers
+        Map<String, String> queryMap =  param.queryParams
         Map<String, String> pathParams =  param.pathParams
         
         def obj = jsp.parseText(body) // This is essentially a map
@@ -35,9 +35,9 @@ class SimpleAdapterFunction extends UserDefinedFunction.SingleIOFunction {
         }
         obj.hasNext = true;
 
-        RestExecParameters.RestExecParametersBuilder rep = RestExecParameters.builder().body(JsonOutput.toJson(out))
+        ExecParameters.ExecParametersBuilder rep = ExecParameters.builder().body(JsonOutput.toJson(out))
 
-        for (Entry<String, String> entry : headers.entrySet()) {
+        for (Entry<String, List<String>> entry : headers.entrySet()) {
             rep.header(entry.getKey(), entry.getValue())
         }
         for (Entry<String, String> entry : queryMap.entrySet()) {

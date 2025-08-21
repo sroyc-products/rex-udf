@@ -7,7 +7,7 @@ class TestSimpleAdapterFunction extends Specification {
     
     def "simple adapter"() {
         given: 
-            def input = new SimpleFunctionInput()
+            def input = new ExecParameters()
             input.body = '''
             {
                 "id" : 100,
